@@ -10,6 +10,9 @@ Python中GUI自动化工具介绍：
   Pywinauto ： 同时支持控件操作和图像操作，支持Win32 API和MS UI Automation API   
   
 
+pip install -r requirements.txt
+
+
 安装前提：  
 	1.安装好python(建议使用python3.5以上的版本)  
 	2.确认pip 是否能正常使用  
