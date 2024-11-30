@@ -32,6 +32,15 @@ else:
 
 # 原始字符串
 original_string = ""
+
+sub_string = "请转发"
+reply_text = "收到"
+
+# 显示提示信息，并等待用户输入
+sub_string = input("触发内容: ")
+
+# 显示提示信息，并等待用户输入
+reply_text = input("回复内容: ")
  
 while True:
     try:
@@ -50,23 +59,22 @@ while True:
         print("最新数据：", new_string)
         original_string = clipboard_text
         # exit()
-        reply_text = "收到"
-    
+        
         # dingding_window.set_focus()
         time.sleep(0.1)
         click_image('4.png')
         
         # 定义两个字符串  new_string
-        main_string = "Hello, world!"
-        sub_string = "world"
-        
+        # sub_string = "world"
+        # reply_text = "收到"
+
         # 使用in关键字判断main_string是否包含sub_string
-        if sub_string in main_string:
+        if sub_string in new_string:
             keyboard.write(reply_text)
             keyboard.press_and_release('enter')  # 发送消息
-            print(f"'{main_string}' 包含 '{sub_string}'")
+            print(f"'{new_string}' 包含 '{sub_string}'")
         else:
-            print(f"'{main_string}' 不包含 '{sub_string}'")
+            print(f"'{new_string}' 不包含 '{sub_string}'")
 
         # 格式化打印时间
         print("当前时间是9:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
