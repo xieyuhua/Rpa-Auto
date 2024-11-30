@@ -5,6 +5,8 @@ import pyautogui
 import keyboard  # 你需要安装keyboard库：pip install keyboard
 from pywinauto.keyboard import *
 import pyperclip
+from datetime import datetime
+
 
 # 唤醒钉钉窗口，指定窗口位置，识别文字，包含文字（###），发布消息（###）enter
 # pip install --upgrade pyautogui pyscreeze
@@ -34,22 +36,18 @@ original_string = ""
 while True:
     try:
         # chatbox_window.set_focus()
-        dingding_window.set_focus()
-        click_image('1.png')
-        
-        send_keys('^a')
+        dingding_window.set_focus() # 11s
+        click_image('1.png') # <1s
+        send_keys('^a') # <1s
         # time.sleep(0.5)  # 等待片刻以确保全选操作完成
-        send_keys('^c')
-
+        send_keys('^c') # <1s
         # pyperclip.copy("")
         # 获取剪贴板上的文本
         clipboard_text = pyperclip.paste()
         # 打印剪贴板上的文本
-
         new_string = clipboard_text.replace(original_string, "")
         # 输出替换后的字符串
         print("最新数据：", new_string)
-
         original_string = clipboard_text
         # exit()
         reply_text = "收到"
@@ -57,8 +55,7 @@ while True:
         # dingding_window.set_focus()
         time.sleep(0.1)
         click_image('4.png')
-
-
+        
         # 定义两个字符串  new_string
         main_string = "Hello, world!"
         sub_string = "world"
@@ -70,6 +67,9 @@ while True:
             print(f"'{main_string}' 包含 '{sub_string}'")
         else:
             print(f"'{main_string}' 不包含 '{sub_string}'")
+
+        # 格式化打印时间
+        print("当前时间是9:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
         time.sleep(1)
     except Exception as e:
