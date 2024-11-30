@@ -45,7 +45,7 @@ while True:
         # 获取剪贴板上的文本
         clipboard_text = pyperclip.paste()
         # 打印剪贴板上的文本
-        
+
         new_string = clipboard_text.replace(original_string, "")
         # 输出替换后的字符串
         print("最新数据：", new_string)
@@ -58,8 +58,18 @@ while True:
         time.sleep(0.1)
         click_image('4.png')
 
-        keyboard.write(reply_text)
-        keyboard.press_and_release('enter')  # 发送消息
+
+        # 定义两个字符串  new_string
+        main_string = "Hello, world!"
+        sub_string = "world"
+        
+        # 使用in关键字判断main_string是否包含sub_string
+        if sub_string in main_string:
+            keyboard.write(reply_text)
+            keyboard.press_and_release('enter')  # 发送消息
+            print(f"'{main_string}' 包含 '{sub_string}'")
+        else:
+            print(f"'{main_string}' 不包含 '{sub_string}'")
 
         time.sleep(1)
     except Exception as e:
