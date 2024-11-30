@@ -59,7 +59,8 @@ while True:
         print("最新数据：", new_string)
         original_string = clipboard_text
         # exit()
-        
+        if new_string=="":
+            continue
         # dingding_window.set_focus()
         time.sleep(0.1)
         click_image('4.png')
@@ -77,7 +78,7 @@ while True:
             print(f"'{new_string}' 不包含 '{sub_string}'")
 
         # 格式化打印时间
-        print("当前时间是9:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        print("当前时间是:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
         time.sleep(1)
     except Exception as e:
