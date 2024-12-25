@@ -42,6 +42,10 @@ element = driver.find_element(By.CLASS_NAME, 'main__account__btn')
 # 执行点击操作
 element.click()
 
+# element = driver.find_element(By.TAG_NAME, 'data-v-bd62af92')
+# 执行点击操作
+# element.click()
+
 time.sleep(10)
 driver.get("https://vip.com/view/orderReason/refund")
 
@@ -54,7 +58,11 @@ while 1:
                 reviews.append(comment.text)
                 print(f"已爬取{len(reviews)}条评论...")
             next_page_link = driver.find_element(By.CLASS_NAME, "btn-next")
-            next_page_link.click()
+            click = next_page_link.is_enabled()
+            if click:
+                next_page_link.click()
+            else:
+                break
         except StaleElementReferenceException:
             time.sleep(random.uniform(1, 3))
     driver.get("https://vip.com/view/orderReason/refund")
