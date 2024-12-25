@@ -5,6 +5,22 @@ from selenium.common.exceptions import StaleElementReferenceException
 import time
 import random
 
+# element.send_keys('xhoo2024')
+# element.click()
+# element.text
+# element.get_attribute('href')  你可以获取元素的任何HTML属性，比如href、src、title等。
+# element.is_displayed()  判断元素是否可见
+# element.is_enabled()  判断元素是否可被点击
+# element.clear()  清除元素中的文本（通常用于输入框）：
+# element.submit()  提交表单（如果元素是一个表单或表单内的提交按钮）
+# element.value_of_css_property('color') 获取元素的CSS属性值
+# location = element.location  获取元素的位置和大小
+# size = element.size  和大小
+# print(f"Location: {location}, Size: {size}")
+# element.screenshot('element_screenshot.png')    截图（保存元素的截图到文件）
+
+
+
 driver = webdriver.Edge()
 # 启动浏览器驱动
 driver.get("https://vip.com/view/login")
